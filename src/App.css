@@ -1,0 +1,954 @@
+@import "~@flaticon/flaticon-uicons/css/all/all";
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.MainBlock {
+  float: left;
+  width: 100%;
+  height: inherit;
+}
+
+.Block1 {
+  float: left;
+  width: 100%;
+  height: 768px;
+  background-image: url("https://avatars.mds.yandex.net/i?id=4cbfaa88d3148432e429b6c06e90da6c-5252128-images-thumbs&n=13");
+  background-size: cover;
+}
+
+.Block2 {
+  float: left;
+  width: 100%;
+  height: 800px;
+  background-color: #282c34;
+}
+
+.onBlockCover {
+  float: left;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.NavBlock {
+  float: left;
+  width: 100%;
+  height: 12%;
+  position: absolute;
+  left: 0px;
+  top: -110px;
+  z-index: 50;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.NavBlock4 {
+  float: left;
+  width: 100%;
+  height: 12%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 50;
+  position: fixed;
+  background-color: white;
+  box-shadow: 5px 5px 5px lightgray;
+}
+
+
+.NavBlock2 {
+  float: left;
+  width: 100%;
+  height: 12%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 50;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+
+}
+
+/* @keyframes rotateAnimation {
+  from {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+  }
+  to {
+    position: fixed;
+    background-color: white;
+    color: black;
+  }
+} */
+
+.imglogo {
+  width: 120px;
+}
+
+.btnNav {
+  margin-left: 20px;
+  background-color: #F91942;
+  color: white;
+}
+
+.btnNavright {
+  margin-right: 150px;
+}
+
+.LocationBlock {
+  float: left;
+  width: 50%;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.locationInBlock {
+  background-color: white;
+  width: 65%;
+  height: 50%;
+
+}
+
+.descriptfloat {
+  color: gray;
+}
+
+.inplocationblock {
+  float: left;
+  width: 100%;
+  height: 50px;
+  border: solid 1px gray;
+  border-radius: 5px;
+  display: flex;
+}
+
+.inplocation {
+  float: left;
+  width: 100%;
+  height: 90%;
+  background-color: white;
+  border: none;
+  outline: none;
+}
+
+.fa-location-dot2 {
+  float: left;
+  width: 10%;
+  margin-top: 15px;
+  color: gray;
+  cursor: pointer;
+}
+
+.fa-location-dot2:hover {
+  color: red;
+}
+
+.inplocationblock2 {
+  float: left;
+  width: 100%;
+  height: 50px;
+  border: solid 1px gray;
+  border-radius: 5px;
+  display: flex;
+  cursor: pointer;
+}
+
+.fa-calendar-days {
+  float: left;
+  width: 10%;
+  margin-top: 15px;
+  color: gray;
+  cursor: pointer;
+}
+
+.inplocation2 {
+  float: left;
+  width: 100%;
+  height: 90%;
+  background-color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.inplocationblock2:hover {
+  color: red;
+}
+
+.fa-calendar-days:hover {
+  float: left;
+  width: 10%;
+  margin-top: 15px;
+  color: rgb(253, 2, 2);
+  cursor: pointer;
+}
+
+.btnlocation1 {
+  text-align: left;
+}
+
+.Block2 {
+  float: left;
+  width: 100%;
+  height: inherit;
+  background-color: white;
+}
+
+.descripthouse {
+  font-weight: 400;
+  font-size: 35px;
+}
+
+.redLine {
+  justify-content: center;
+  align-items: center;
+  background-color: #F91942;
+  height: 3px;
+  width: 80px;
+}
+
+.redlinecol {
+  justify-content: center;
+  align-items: center;
+}
+
+.descripthouse2 {
+  font-weight: 400;
+  font-size: 25px;
+  color: gray;
+}
+
+.categoryRealEstatecol {
+  justify-content: center;
+  align-items: center;
+}
+
+.categoryRealEstate {
+  border: solid 1px rgb(233, 231, 231);
+  background-color: rgb(233, 231, 231);
+  width: 180px;
+  height: 180px;
+  margin: 10px;
+  flex-grow: initial;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.iconREstate {
+  color: red;
+  font-size: 45px;
+}
+
+.NameHouse {
+  color: gray;
+}
+
+.categoryRealEstate:hover {
+  background-color: #F91942;
+  transform: scale(1.05);
+  transition: 0.5s;
+}
+
+.categoryRealEstate:hover .iconREstate {
+  color: white;
+}
+
+.categoryRealEstate:hover .NameHouse {
+  color: white;
+}
+
+.categoryRealEstate:hover .NameHouse {
+  color: white;
+}
+
+.lightGray {
+  color: gray;
+  background-color: lightgray;
+}
+
+.categoryRealEstate:hover .lightGray {
+  color: white;
+  background-color: rgb(196, 2, 2);
+}
+
+.main2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ShowHouseBlock {
+  width: 80%;
+  height: inherit;
+}
+
+.HouseBlock {
+  float: left;
+  width: 30%;
+  height: 250px;
+  background-image: url("https://doma.kg/wp-content/uploads/2024/07/128b9d0b-a1c1-4732-b9e6-5d47a6edea79.jpg");
+  background-size: cover;
+  margin: 1.5%;
+  cursor: pointer;
+}
+
+.DarkHouseBlock {
+  float: left;
+  width: 100%;
+  height: 100%;
+  padding-left: 8%;
+  background: rgba(0, 0, 0, 0.4)
+}
+
+.HouseBlock:hover {
+  transform: scale(1.05);
+  transition: 0.5s;
+}
+
+.descripthouse2 {
+  font-size: 20px;
+  color: white;
+}
+
+.descripthouse3 {
+  font-size: 15px;
+  color: rgb(195, 195, 195);
+}
+
+.btnSee {
+  font-size: 30px;
+}
+
+.onBlock4 {
+  width: 100%;
+  height: 200px;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.block4 {
+  width: 70%;
+  height: 100%;
+  padding-left: 3%;
+  background-image: url("https://www.renderhub.com/cgaxis/cgaxis-door-handle-06/cgaxis-door-handle-06-01.jpg");
+}
+
+.telBlock {
+  background-color: #61CE70;
+  color: white;
+  cursor: pointer;
+
+}
+
+.telBlock:hover {
+  background-color: #4ebb5d;
+}
+
+.btnlike2 {
+  background-color: #080808;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: none;
+}
+
+.btnlike2:hover {
+  background-color: #F91942;
+}
+
+.infotel {
+  width: 100%;
+  height: 200px;
+  background-image: url("https://overclockers.ru/st/legacy/blog/413830/451438_O.jpeg");
+  background-size: cover;
+}
+
+.inInfotel {
+  background-color: rgba(0, 0, 0, 0.3);
+  float: left;
+  width: 100%;
+  height: 100%;
+}
+
+
+.block50 {
+  color: white;
+  float: left;
+  font-size: 40px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.block52 {
+  display: none;
+  cursor: pointer;
+}
+
+.Block3 {
+  float: left;
+  width: 100%;
+  height: inherit;
+}
+
+.inBlock3 {
+  float: left;
+  width: 100%;
+  height: inherit;
+  padding: 10%;
+}
+
+.descripthouse4 {
+  font-size: 20px;
+  color: gray;
+  margin-top: 20px;
+}
+
+.footerNav {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  color: gray;
+}
+
+.footerul2 {
+  list-style: none;
+}
+
+.footerulli:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.iconfooterblock {
+  text-align: right;
+}
+
+.iconfooter {
+  font-size: 25px;
+  margin: 8px;
+  color: gray;
+}
+
+.iconfooter:hover {
+  color: black;
+  cursor: pointer;
+}
+
+.Mainblock4 {
+  float: left;
+  width: 80px;
+  height: 150px;
+  position: absolute;
+  left: 1360px;
+  top: 560px;
+  position: fixed;
+}
+
+.messagebtn {
+  width: 50px;
+  height: 50px;
+  padding-top: 10px;
+  border-radius: 50px;
+  background-color: #4F6ACA;
+  border: none;
+  position: relative;
+  top: 100px;
+  left: 10px;
+}
+
+.messageicon {
+  font-size: 25px;
+}
+
+.messagebtn2 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: #4F6ACA;
+  border: none;
+  position: relative;
+  top: 100px;
+  left: 10px;
+  display: none;
+}
+
+.messageicon2 {
+  font-size: 25px;
+}
+
+.fa-solid {
+  font-size: 25px;
+}
+
+.fa-brands {
+  font-size: 25px;
+}
+
+.messagebtn3 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: #3E99D7;
+  border: none;
+  position: relative;
+  top: -5px;
+  left: 10px;
+  display: none;
+}
+
+.messagebtn4 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: #49E670;
+  border: none;
+  position: relative;
+  top: -110px;
+  left: 10px;
+  display: none;
+}
+
+.messagebtn5 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: #03E78B;
+  border: none;
+  position: relative;
+  top: -215px;
+  left: 10px;
+  display: none;
+
+}
+
+.BodyBlockContactPage {
+  float: left;
+  width: 100%;
+  height: 480px;
+  background-color: gray;
+
+
+}
+
+.blockforNav {
+  width: 100%;
+  float: left;
+  background-color: white;
+  height: 90px;
+
+}
+
+.MapBlockContactPage {
+  float: left;
+  width: 70%;
+  height: 100%;
+  background-color: red;
+
+}
+
+.ContactBlockContactPage {
+  float: left;
+  width: 30%;
+  height: 100%;
+  background-color: #080808;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+
+.redLineContactPage {
+  width: 50px;
+  background-color: rgb(255, 0, 0);
+  height: 1px;
+}
+
+.registBlockDark {
+  float: left;
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  width: 100%;
+  height: 800px;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+}
+
+.registBlock {
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 600px;
+  background-color: white;
+}
+
+.iconregist {
+  padding: 8px 10px 5px 10px;
+  background-color: lightgray;
+
+}
+
+.iconregist:hover {
+  background-color: red;
+  cursor: pointer;
+
+}
+
+.iconregist:hover .iconregisticon {
+  color: white;
+}
+
+.iconregisticon {
+  font-size: 20px;
+}
+
+.textlogin:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.inpdiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inpblock {
+  width: 90%;
+  height: 50px;
+  border: solid 1px lightgray;
+  padding: 3%;
+  box-shadow: 0px 0px 5px lightgray;
+}
+
+.fa-user {
+  font-size: 20px;
+  color: gray
+}
+
+.fa-lock {
+  font-size: 20px;
+  color: gray
+}
+
+.inInpblock1 {
+  float: left;
+  width: 10%;
+  height: 100%;
+}
+
+.inInpblock2 {
+  float: left;
+  width: 90%;
+  height: 100%;
+}
+
+.registinp {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+}
+
+.passwordlost:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.btnlogin {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.inpcheckbox {
+  border-radius: 50px;
+  width: 20px;
+  height: 20px;
+  border: lightgray;
+}
+
+.LeftBlockCategory {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 800px;
+  height: 760px;
+  display: flex;
+  border: solid 1px gray;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+
+}
+
+.RightBlockCategory {
+  position: absolute;
+  left: 785px;
+  top: 0px;
+  width: 700px;
+  height: 760px;
+  position: fixed;
+  border: solid 1px gray;
+  
+}
+
+.leftblockinp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inpBlockcategory {
+  float: left;
+  width: 90%;
+  border: solid 0.5px lightgray;
+  margin-top: 130px;
+}
+
+.inpdescript {
+  float: left;
+  width: 90%;
+  height: 50px;
+  border: none;
+  outline: none;
+  padding: 0px 10px 0px 20px;
+}
+
+.btnCategory {
+  padding: 5px 15px 5px 15px;
+  border-radius: 50px;
+  background: white;
+  margin: 0px 10px 0px 10px;
+  border: none
+}
+
+.btnCategory:hover {
+  background-color: rgb(240, 239, 239);
+  transition: 500ms;
+
+
+}
+
+.showimg {
+  background-color: rgb(240, 239, 239);
+  ;
+}
+
+.iconCategory {
+  font-size: 15px;
+}
+
+.onblockimg2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.showimg2 {
+  width: 90%;
+  height: 250px;
+  background-color: white;
+  transition: 500ms;
+  cursor: pointer;
+}
+
+.showimg2:hover {
+  transition: 500ms;
+  margin-left: 20px;
+}
+
+.inshowimg2 {
+  float: left;
+  width: 30%;
+  height: 100%;
+  background-image: url("https://doma.kg/wp-content/uploads/2024/04/7cc007f5a0dc184403b49f105d.jpeg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.inshowimg2descript {
+  float: left;
+  width: 70%;
+  height: 100%;
+}
+
+.btndescriptcategory {
+  background-color: darkred;
+  border-radius: 40px;
+  color: white;
+  padding: 5px 10px 5px 10px;
+  border: none;
+  margin-bottom: 5%;
+}
+.showimg2descriptleft{
+  float: left;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding-left: 5%;
+}
+.showimg2descriptright{
+  float: left;
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btnlikeCategory{
+  background-color: lightgray;
+
+}
+.iconbtnlikeCategory{
+  color: gray;
+  font-size: 15px;
+  padding: 10px 5px 10px 5px;
+}
+.iconbtnlikeCategory:hover{
+  color: white;
+}
+
+.btnlikeCategory:hover{
+  background-color: red;
+}
+.listingMainContainer{
+  float: left;
+  width: 100%;
+  height: inherit;
+  padding: 10%;
+  background-color: #FBFBFB;
+}
+
+.listingspan{
+  padding: 5px 15px 5px 15px;
+  cursor: pointer;
+  margin: 5px;
+}
+.listingspan1{
+  background-color: #FAEAED;
+  color: red;
+}
+.listingspan2{
+  background-color: #FAEAED;
+  color: red;
+}
+.listingspan3{
+  background-color: #E2F5D8;
+  color: green;
+}
+.listingicon{
+  background-color: #64BC36;
+  border-radius: 50px;
+  padding: 0px 5px 0px 5px;
+}
+.listingIconPrice{
+  font-size: 15px;
+}
+.listinH1{
+  font-size: 33px;
+  font-weight: 350;
+}
+.fa-location-dot3{
+  font-size: 20px;
+  color: lightgray;
+}
+.geodescritplisting{
+  margin-left: 10px;
+  font-size: 20px;
+}
+.fa-location-dot3:hover{
+  font-size: 20px;
+  color: gray;
+}
+.listingImgLeftContainer{
+  float: left;
+  width: 100%;
+  height: inherit;
+  
+}
+.listimg{
+  float: left;
+  width: 100%;
+  height: 550px;
+}
+.listimg2{
+  float: left;
+  width: 100%;
+  height: 267px;
+}
+.listdescripthouse{
+  color: gray;
+  font-size: 20px;
+}
+.bookApartment{
+  float: left;
+  width: 90%;
+  background-color: lightgray;
+  height: inherit;
+}
