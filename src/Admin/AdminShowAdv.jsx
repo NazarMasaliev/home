@@ -1,15 +1,10 @@
-import Footer from "../attach/footer"
-import MessageBlock from "../attach/message"
-import Navblock4 from "../attach/navblock4"
 import L from 'leaflet';
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
-import { useState } from "react";
-import { useNavigate, useParams } from "react-router";
-import axios from "axios";
-import { useEffect } from "react";
+import Picture from "../Pages/Picture";
+import { useEffect, useState } from "react";
+import $ from 'jquery';
+import { useParams } from 'react-router';
+import axios from 'axios';
 
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
@@ -18,12 +13,20 @@ L.Icon.Default.mergeOptions({
   shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
 });
 
-function ListingPage() {
+function AdminShowAdv() {
   const params = useParams()
   const id = params.id
-  const [latitude, setlatitude] = useState()
-  const [longitude, setlongitude] = useState()
-  const navigate = useNavigate()
+
+
+
+  ///
+
+
+
+
+
+
+
   const [house, setHouse] = useState()
   let getHouseF = async () => {
     let getHouseData = await axios({
@@ -31,16 +34,10 @@ function ListingPage() {
       url: `https://672db6fffd89797156435d34.mockapi.io/house/${id}`
     })
     if (getHouseData.status == 200) {
-      if (getHouseData.data.state == "true") {
-        setHouse(getHouseData.data)
-        setlatitude(getHouseData.data.latitude)
-        setlongitude(getHouseData.data.longitude)
-      }
-      else {
-        alert("Объявление еще не одобрено администратором!")
-        navigate(-1)
-      }
-
+      setHouse(getHouseData.data)
+      console.log(getHouseData)
+      setlatitude(getHouseData.data.latitude)
+      setlongitude(getHouseData.data.longitude)
     }
     else {
       setHouse([])
@@ -48,37 +45,62 @@ function ListingPage() {
   }
 
 
+  let getHouseUpdateTrueF = async () => {
+    let getHouseUpdateData = await axios({
+      method: "put",
+      url: `https://672db6fffd89797156435d34.mockapi.io/house/${id}`,
+      data:{
+        state: "true"
+      }
+    })
+    if (getHouseUpdateData.status == 200) {
+      console.log(getHouseUpdateData)
+      window.location.href = '/Admin/AdminShowAdv/' + id
+    }
+  }
+  let getHouseUpdateFalesF = async () => {
+    let getHouseUpdateData = await axios({
+      method: "put",
+      url: `https://672db6fffd89797156435d34.mockapi.io/house/${id}`,
+      data:{
+        state: "false"
+      }
+    })
+    if (getHouseUpdateData.status == 200) {
+      console.log(getHouseUpdateData)
+      window.location.href = '/Admin/AdminShowAdv/' + id
+    }
+  }
 
-  
+
+  const [latitude, setlatitude] = useState()
+  const [longitude, setlongitude] = useState()
 
 
 
-  var settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 2,
-    slidesToScroll: 1,
-  };
+
   const position = [latitude, longitude];
-  function ListingPage(id) {
-    window.location.href = '/Pages/ListingPage/' + id
-  }
   function openpicture(id) {
-    window.location.href = '/Pages/Picture/' + id
+    window.location.href= '/Pages/Picture/'+id
 
 
   }
+
+
+  //
+
+
+  //
 
   useEffect(() => {
     getHouseF();
   }, [])
+
   return (
     <div className="MainBlock">
-      <Navblock4 />
-      {house != null ?
-        <>
-          <div className="listingMainContainer">
+      <div className="listingMainContainer2 mb-5">
+        {house != null ?
+          <>
             <div className="row">
               <div className="col-12">
                 <span className=" rounded-pill listingspan listingspan1">{house.category}</span>
@@ -86,15 +108,15 @@ function ListingPage() {
                   <span className="listingicon">
                     <i class="fa-solid fa-tag text-white listingIconPrice"></i>
                   </span>
-                  {house.pricenight}  сом - {house.priceday}  сом
+                  {house.pricenight}  сом - {house.priceday}
                 </span>
               </div>
               <div className="col-12 mt-2">
-                <span className="listinH1">  «{house.name}»</span>
+                <span className="listinH1">{house.name}</span>
               </div>
               <div className="col-12 mt-1">
                 <i class="fa-solid fa-location-dot fa-location-dot3 p-0 m-0"></i>
-                <span className="text-secondary geodescritplisting">"{house.region}"</span>
+                <span className="text-secondary geodescritplisting">ЦО "{house.region}"</span>
               </div>
               <div className="col-12">
                 <div className="row">
@@ -142,10 +164,28 @@ function ListingPage() {
                   <div className="col-8">
                     <div className="row">
                       <div className="col-12">
-                        <h4>Описание</h4>
+                        <button className='rounded' onClick={getHouseUpdateTrueF}>
+                          Одобрить объявления
+                        </button>
+                        &nbsp;
+                        <button className='rounded' onClick={getHouseUpdateFalesF}>
+                          Не одобрять объявление
+                        </button>
                       </div>
-                      <div className="col-12">
-                        <p className="listdescripthouse">{house.description}</p>
+                      <div className='col-12 mt-3'>
+                        <div className="row">
+                          <div className="col-6 text-center">
+                            Статус:
+                            &nbsp;<span className='bg-secondary text-white ps-3 pe-3 pt-1 pb-1 rounded'>{house.state}</span>
+                          </div>
+                          <div className="col-6">
+
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-12 mt-3">
+                        <h4>Описание</h4>
+                        <p>{house.description}</p>
                       </div>
                       <div className="col-12 mt-5">
                         <span className="listingspan6 rounded-pill text-dark">
@@ -168,6 +208,7 @@ function ListingPage() {
                           <div className="Features">
                             {house.peculiarities}
                           </div>
+
                         </div>
                       </div>
                       <div className="col-12 mt-5">
@@ -191,15 +232,15 @@ function ListingPage() {
                 </div>
               </div>
             </div>
-          </div>
-        </>
-        :
-        <>
-        </>
-      }
-      <Footer />
-      <MessageBlock />
-    </div >
+          </>
+          :
+          <>
+            no result
+          </>
+        }
+
+      </div>
+    </div>
   )
 }
-export default ListingPage
+export default AdminShowAdv

@@ -265,12 +265,14 @@
   color: gray;
 }
 
-.categoryRealEstatecol {
-  justify-content: center;
-  align-items: center;
+.regionshowblock{
+  float: left;
+  width: 70%;
+  height: inherit;
 }
 
 .categoryRealEstate {
+  float: left;
   border: solid 1px rgb(233, 231, 231);
   background-color: rgb(233, 231, 231);
   width: 180px;
@@ -661,7 +663,9 @@
 .iconregisticon {
   font-size: 20px;
 }
-
+.textlogin{
+  padding: 5px 10px 5px 10px;
+}
 .textlogin:hover {
   color: red;
   cursor: pointer;
@@ -750,7 +754,7 @@
   height: 760px;
   position: fixed;
   border: solid 1px gray;
-  
+
 }
 
 .leftblockinp {
@@ -792,7 +796,8 @@
 
 .showimg {
   background-color: rgb(240, 239, 239);
-  ;
+  cursor: pointer;
+  
 }
 
 .iconCategory {
@@ -843,7 +848,8 @@
   border: none;
   margin-bottom: 5%;
 }
-.showimg2descriptleft{
+
+.showimg2descriptleft {
   float: left;
   width: 80%;
   height: 100%;
@@ -853,7 +859,8 @@
   align-items: start;
   padding-left: 5%;
 }
-.showimg2descriptright{
+
+.showimg2descriptright {
   float: left;
   width: 20%;
   height: 100%;
@@ -861,94 +868,473 @@
   justify-content: center;
   align-items: center;
 }
-.btnlikeCategory{
+
+.btnlikeCategory {
   background-color: lightgray;
 
 }
-.iconbtnlikeCategory{
+
+.iconbtnlikeCategory {
   color: gray;
   font-size: 15px;
   padding: 10px 5px 10px 5px;
 }
-.iconbtnlikeCategory:hover{
+
+.iconbtnlikeCategory:hover {
   color: white;
 }
 
-.btnlikeCategory:hover{
+.btnlikeCategory:hover {
   background-color: red;
 }
-.listingMainContainer{
+
+.listingMainContainer {
   float: left;
   width: 100%;
   height: inherit;
-  padding: 10%;
-  background-color: #FBFBFB;
+  padding-top: 10%;
+  padding-left: 10%;
+  padding-right: 10%;
+
+  background-color: #FFFFFF;
+}
+.listingMainContainer2 {
+  float: left;
+  width: 100%;
+  height: inherit;
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+
+  background-color: #FFFFFF;
 }
 
-.listingspan{
+.listingspan {
   padding: 5px 15px 5px 15px;
   cursor: pointer;
   margin: 5px;
 }
-.listingspan1{
+
+.listingspan1 {
   background-color: #FAEAED;
   color: red;
 }
-.listingspan2{
+
+.listingspan2 {
   background-color: #FAEAED;
   color: red;
 }
-.listingspan3{
+
+.listingspan3 {
   background-color: #E2F5D8;
   color: green;
 }
-.listingicon{
+
+.listingicon {
   background-color: #64BC36;
   border-radius: 50px;
   padding: 0px 5px 0px 5px;
 }
-.listingIconPrice{
+
+.listingIconPrice {
   font-size: 15px;
 }
-.listinH1{
+
+.listinH1 {
   font-size: 33px;
   font-weight: 350;
 }
-.fa-location-dot3{
+
+.listinH2 {
+  font-size: 25px;
+  font-weight: 350;
+}
+
+.fa-location-dot3 {
   font-size: 20px;
   color: lightgray;
 }
-.geodescritplisting{
+
+.geodescritplisting {
   margin-left: 10px;
   font-size: 20px;
 }
-.fa-location-dot3:hover{
+
+.fa-location-dot3:hover {
   font-size: 20px;
   color: gray;
 }
-.listingImgLeftContainer{
+
+.listingImgLeftContainer {
   float: left;
   width: 100%;
   height: inherit;
-  
+  cursor: zoom-in;
+
 }
-.listimg{
+
+.listimg {
   float: left;
   width: 100%;
   height: 550px;
 }
-.listimg2{
+
+.listimg2 {
   float: left;
   width: 100%;
   height: 267px;
 }
-.listdescripthouse{
+
+.listdescripthouse {
   color: gray;
-  font-size: 20px;
+  font-size: 18px;
 }
-.bookApartment{
+
+.bookApartment {
   float: left;
   width: 90%;
-  background-color: lightgray;
+  background-color: #e8e7e7;
   height: inherit;
+  padding: 5%;
+}
+
+.listphone {
+  font-size: 18px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.listingspan6 {
+  background-color: lightgray;
+  padding: 5px 10px 5px 10px;
+  cursor: pointer;
+}
+
+.listsocialnetwork {
+  text-align: center;
+  padding: 5px 10px 8px 10px;
+  color: white;
+}
+
+
+.listinstagram {
+  background-color: #E1306C;
+  border-radius: 50px 0px 0px 50px;
+}
+
+.listwhatsapp {
+  background-color: #4AAE20;
+  border-radius: 0px 50px 50px 0px;
+}
+
+.FeaturesBlock {
+  float: left;
+  width: 100%;
+}
+
+.Features {
+  float: left;
+  width: 30%;
+  justify-content: center;
+  align-items: center;
+  color: gray;
+  margin: 0.5%;
+  font-size: 18px;
+}
+
+.Features:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.listmapblock {
+  float: left;
+  width: 100%;
+  height: 300px;
+
+}
+
+.listinpblock {
+  width: 100%;
+}
+
+.mapposition {
+  position: sticky;
+}
+
+.AppSlide {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 600px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.slider-slide {
+  text-align: center;
+  flex-grow: 1;
+}
+
+.arrow-button {
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.arrow-button:hover {
+  color: #007BFF;
+}
+
+.arrow-button.left {
+  margin-right: 20px;
+}
+
+.arrow-button.right {
+  margin-left: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 18px;
+  color: #555;
+}
+.registrationblock {
+  display: none;
+}
+
+.PictureMainBlock {
+  width: 100%;
+  height: 760px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.pictureBlock {
+  float: left;
+  width: 70%;
+  height: 599px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  margin: 5% 15%;
+}
+
+.Slideimg {
+  width: 100%;
+  float: left;
+  height: 70%;
+
+}
+
+.imgslide {
+  margin-left: 400px;
+  margin-top: 100px;
+  cursor: pointer;
+}
+
+.imgprofil {
+  width: 50px;
+}
+
+.emailprofil {
+  cursor: pointer;
+  transition: 500ms;
+}
+
+.emailprofil:hover {
+  color: darkred;
+  font-size: 18px;
+  transition: 500ms;
+}
+
+.Sections {
+  font-weight: 600;
+  color: gray;
+  transition: 500ms;
+  padding: 10px 0px 10px 0px;
+  height: 50px;
+}
+
+.Sections2 {
+  font-weight: 600;
+  color: gray;
+  transition: 500ms;
+  padding: 10px 0px 10px 0px;
+  height: 50px;
+}
+
+.Sections2:hover {
+  color: black;
+  transition: 500ms;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.Sections:hover {
+  color: red;
+  transition: 500ms;
+  cursor: pointer;
+  background-color: lightgray;
+}
+
+.Sections:hover span {
+  margin-left: 10px;
+  transition: 500ms;
+}
+
+.Sections span {
+  transition: 500ms;
+}
+
+.imgAds {
+  width: 100px;
+  height: 90px;
+}
+
+.blockads {
+  display: flex;
+  justify-content: center;
+  overflow-y: scroll;
+  height: 600px;
+}
+
+.blockads2 {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  height: 600px;
+  align-items: center;
+
+}
+
+.inadsblock {
+  width: 90%;
+  border-radius: 5px;
+  background-color: lightgray;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inadsblock:hover {
+  background-color: rgb(195, 192, 192);
+
+}
+
+.descripthouseprofilPage {
+  width: 70%;
+  height: 100px;
+}
+
+.MainSection {
+  text-decoration: none;
+  color: #808080;
+  font-weight: 600;
+}
+
+.liSection {
+  list-style: none;
+}
+
+.divsection {
+  transition: 500ms;
+}
+
+.divsection:hover {
+  background-color: lightgray;
+}
+
+.divsection:hover .selectionspan {
+  color: red;
+  transition: 500ms;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.selectionspan {
+  transition: 500ms;
+}
+
+.showAllAdvertisementsBlock {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  width: 100%;
+  height: inherit;
+}
+
+.showAllAdvertisements {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(236, 233, 233);
+
+}
+
+.iconupdown {
+  font-size: 14px;
+}
+
+.inpadmin {
+  width: 80%;
+  outline: none;
+  height: 30px;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+.deleteiconprofilpage:hover {
+  color: red;
+}
+
+.fa-trash:hover {
+  cursor: pointer;
+  color: red;
+}
+
+.fa-eye {
+  cursor: pointer;
+}
+
+.fa-eye:hover {
+  color: #007BFF;
+}
+
+.fa-pen:hover {
+  color: #007BFF;
+  cursor: pointer;
+}
+.Advscroll{
+  width: 95%;
+  background: grey;
+  color: white;
+  cursor: pointer;
+  transition: 500ms;
+}
+.Advscroll:hover{
+  background:  #6C757D;
+  transition: 500ms;
+
 }

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import $ from 'jquery';
 import Footer from "../attach/footer";
 import MessageBlock from "../attach/message";
+import axios from "axios";
 function MainPage() {
 
   //
@@ -24,17 +25,36 @@ function MainPage() {
     $('.block50').css({ "background-color": "rgba(0, 0, 0, 0.6)", "transition": "500ms" })
   }
 
-  function ListingPageF(){
-    window.location.href='/Pages/ListingPage'
+  function ListingPageF(id) {
+    window.location.href = '/Pages/ListingPage/' + id
   }
-  
+
 
 
 
   ///
-  function CategoryPage() {
-    window.location.href = '/Pages/CategoryPage'
+  function CategoryPage(category) {
+    window.location.href = '/Pages/CategoryPage/' + category
   }
+
+  const [house, setHouse] = useState()
+  let getHouseF = async () => {
+    let getHouseData = await axios({
+      method: "get",
+      url: "https://672db6fffd89797156435d34.mockapi.io/house"
+    })
+    if (getHouseData.status == 200) {
+      console.log(getHouseData)
+      setHouse(getHouseData.data)
+
+    }
+    else {
+      setHouse([])
+    }
+  }
+  
+
+
 
 
 
@@ -47,6 +67,10 @@ function MainPage() {
     Quey4()
     setTimeout(Quey3, 500)
   }
+
+  useEffect(() => {
+    getHouseF()
+  }, [])
 
 
   return (
@@ -93,35 +117,35 @@ function MainPage() {
             <p className="descripthouse2">Основные типы недвижимости</p>
           </div>
           <div className="col-12 d-flex redlinecol mt-3 mb-5 categoryRealEstatecol">
-            <div className="categoryRealEstate" onClick={CategoryPage}>
+            <div className="categoryRealEstate" onClick={() => CategoryPage('Дом')}>
               <i className="fa-regular fa-building iconREstate m-2"></i>
               <span className="NameHouse m-2">Дом</span>
               <span className="rounded-pill ps-3 pe-3 m-2 lightGray">
                 30
               </span>
             </div>
-            <div className="categoryRealEstate" onClick={CategoryPage}>
+            <div className="categoryRealEstate" onClick={() => CategoryPage('Квартира')}>
               <i class="fa-solid fa-building-user iconREstate m-2"></i>
               <span className="NameHouse m-2">Квартира</span>
               <span className="rounded-pill ps-3 pe-3 m-2 lightGray" >
                 30
               </span>
             </div>
-            <div className="categoryRealEstate" onClick={CategoryPage}>
+            <div className="categoryRealEstate" onClick={() => CategoryPage('Комната')}>
               <i class="fa-solid fa-person-shelter iconREstate m-2"></i>
               <span className="NameHouse m-2">Комната</span>
               <span className="rounded-pill ps-3 pe-3 m-2 lightGray">
                 30
               </span>
             </div>
-            <div className="categoryRealEstate" onClick={CategoryPage}>
+            <div className="categoryRealEstate" onClick={() => CategoryPage('Хостел')}>
               <i class="fa-solid fa-hotel iconREstate m-2"></i>
               <span className="NameHouse m-2 ">Хостел</span>
               <span className="rounded-pill ps-3 pe-3 m-2 lightGray">
                 30
               </span>
             </div>
-            <div className="categoryRealEstate" onClick={CategoryPage}>
+            <div className="categoryRealEstate" onClick={() => CategoryPage('Юрта')}>
               <i class="fi fi-sr-home iconREstate"></i>
               <span className="NameHouse m-2">Юрта</span>
               <span className="rounded-pill ps-3 pe-3 m-2 lightGray">
@@ -135,42 +159,41 @@ function MainPage() {
           <div className="col-12 d-flex redlinecol">
             <div className="redLine"></div>
           </div>
-          <div className="col-12 mt-2 text-center">
-            <p className="descripthouse2">Недавно добавленные объявления</p>
-          </div>
           <div className="col-12 main2">
             <div className="ShowHouseBlock">
-              <div className="HouseBlock rounded" onClick={ListingPageF}>
-                <div className="DarkHouseBlock rounded">
-                  <div className="row">
-                    <div className="col-12 pt-3">
-                      <span className="bg-white ps-1 pe-3 rounded-pill text-secondary p-1">
-                        <i class="fa-solid fa-unlock-keyhole text-white bg-success p-1 rounded-pill"></i> 4 500  сом - 7 500  сом
-                      </span>
-                      <button className="btn btn-danger mt-5 pt-0 pb-0 rounded-pill"> недвижимость</button>
-                    </div>
-                    <div className="col-12 text-white mt-5" >
-                      <div className="row">
-                        <div className="col-8">
-                          <span className="descripthouse2">Отель в с. Сары Ой</span><br />
-                          <span className="descripthouse3">Сары Ой, Иссык Куль</span>
-                        </div>
-                        <div className="col-4">
-                          <button className="rounded-pill btnlike2 border">
-                            <i class="fa-solid fa-heart text-white"></i>
-                          </button>
+              {house != null ?
+                <>
+                  {house.map((i) =>
+                    <div className="HouseBlock rounded" onClick={() => ListingPageF(i.id)}>
+                      <div className="DarkHouseBlock rounded">
+                        <div className="row">
+                          <div className="col-12 pt-3">
+                            <span className="bg-white ps-1 pe-3 rounded-pill text-secondary p-1">
+                              <i class="fa-solid fa-unlock-keyhole text-white bg-success p-1 rounded-pill"></i>  {i.priceday} сом -  {i.pricenight}  сом
+                            </span>
+                          </div>
+                          <div className="col-12">
+                            <button className="btn btn-danger mt-5 pt-0 pb-0 rounded-pill"> {i.category}</button>
+                          </div>
+                          <div className="col-12 text-white mt-1" >
+                            <div className="row">
+                              <div className="col-8">
+                                <span className="descripthouse2">{i.name}</span><br />
+                                <span className="descripthouse3">{i.address}</span>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-              <div className="HouseBlock rounded" onClick={CategoryPage}>
-                <div className="DarkHouseBlock rounded" ></div>
-              </div>
-              <div className="HouseBlock rounded" onClick={CategoryPage}>
-                <div className="DarkHouseBlock rounded" ></div>
-              </div>
+                  )}
+
+                </>
+                :
+                <>
+                  <h2>No result</h2>
+                </>
+              }
             </div>
           </div>
           <div className="col-12 text-center mt-5 mb-5">
@@ -182,28 +205,64 @@ function MainPage() {
           <div className="col-12 d-flex redlinecol">
             <div className="redLine"></div>
           </div>
-          <div className="col-12 d-flex redlinecol mt-5 mb-5 categoryRealEstatecol">
-            <div className="categoryRealEstate" onClick={CategoryPage}>
-              <i className="fa-regular fa-building iconREstate m-2"></i>
-              <span className="NameHouse m-2">Бишкек</span>
-              <span className="rounded-pill ps-3 pe-3 m-2 lightGray">
-                30
-              </span>
+          <div className="col-12 redlinecol d-flex mt-5 mb-5 categoryRealEstatecol">
+            <div className="regionshowblock">
+              <div className="categoryRealEstate" onClick={() => CategoryPage('Чуй')}>
+                <i className="fa-regular fa-building iconREstate m-2"></i>
+                <span className="NameHouse m-2">Чуй</span>
+                <span className="rounded-pill ps-3 pe-3 m-2 lightGray">
+                  30
+                </span>
+              </div>
+              <div className="categoryRealEstate" onClick={() => CategoryPage('Ош')}>
+                <i className="fa-regular fa-building iconREstate m-2"></i>
+                <span className="NameHouse m-2">Ош</span>
+                <span className="rounded-pill ps-3 pe-3 m-2 lightGray" >
+                  30
+                </span>
+              </div>
+              <div className="categoryRealEstate" onClick={() => CategoryPage('Джалалабад')}>
+                <i className="fa-regular fa-building iconREstate m-2"></i>
+                <span className="NameHouse m-2">Джалалабад</span>
+                <span className="rounded-pill ps-3 pe-3 m-2 lightGray">
+                  30
+                </span>
+              </div>
+              <div className="categoryRealEstate" onClick={() => CategoryPage('Иссык-куль')}>
+                <i className="fa-regular fa-building iconREstate m-2"></i>
+                <span className="NameHouse m-2">Иссык-куль</span>
+                <span className="rounded-pill ps-3 pe-3 m-2 lightGray">
+                  30
+                </span>
+              </div>
+              <div className="categoryRealEstate" onClick={() => CategoryPage('Талас')}>
+                <i className="fa-regular fa-building iconREstate m-2"></i>
+                <span className="NameHouse m-2">Талас</span>
+                <span className="rounded-pill ps-3 pe-3 m-2 lightGray">
+                  30
+                </span>
+              </div>
+              <div className="categoryRealEstate" onClick={() => CategoryPage('Баткен')}>
+                <i className="fa-regular fa-building iconREstate m-2"></i>
+                <span className="NameHouse m-2">Баткен</span>
+                <span className="rounded-pill ps-3 pe-3 m-2 lightGray">
+                  30
+                </span>
+              </div>
+              <div className="categoryRealEstate" onClick={() => CategoryPage('Наарын')}>
+                <i className="fa-regular fa-building iconREstate m-2"></i>
+                <span className="NameHouse m-2">Наарын</span>
+                <span className="rounded-pill ps-3 pe-3 m-2 lightGray">
+                  30
+                </span>
+              </div>
             </div>
-            <div className="categoryRealEstate" onClick={CategoryPage}>
-              <i className="fa-regular fa-building iconREstate m-2"></i>
-              <span className="NameHouse m-2">Токмак</span>
-              <span className="rounded-pill ps-3 pe-3 m-2 lightGray" >
-                30
-              </span>
-            </div>
-            <div className="categoryRealEstate" onClick={CategoryPage}>
-              <i className="fa-regular fa-building iconREstate m-2"></i>
-              <span className="NameHouse m-2">Чуй</span>
-              <span className="rounded-pill ps-3 pe-3 m-2 lightGray">
-                30
-              </span>
-            </div>
+
+
+
+
+
+
           </div>
           <div className="col-12 mt-5 mb-5">
             <div className="onBlock4">
